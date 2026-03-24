@@ -2,27 +2,26 @@ namespace APBDcw3;
 
 public class Rental
 {
-    User whoBorrowed;
-    Device borrowedDevice;
-    private int dateOfBurrow;
-    private int time;
-    private int dateOfReturn;
-    private float initialPayment;
-    private string Punishment;
+    public User WhoBorrowed;
+    public Device BorrowedDevice;
+    public DateTime DateOfBurrow;
+    public DateTime DueDate;
+    public DateTime DateOfReturn;
+    public float InitialPayment;
 
-    public Rental(User whoBorrowed, Device borrowedDevice, int dateOfBurrow, int dateOfReturn,
-     float initialPayment)
+    public Rental(User whoBorrowed, Device borrowedDevice, DateTime dateOfBurrow,
+     DateTime dueDate,float initialPayment)
     {
-        this.whoBorrowed = whoBorrowed;
-        this.borrowedDevice = borrowedDevice;
-        this.dateOfBurrow = dateOfBurrow;
-        this.dateOfReturn = dateOfReturn;
-        this.initialPayment = initialPayment;
+        this.WhoBorrowed = whoBorrowed;
+        this.BorrowedDevice = borrowedDevice;
+        this.DateOfBurrow = dateOfBurrow;
+        this.DueDate = dueDate;
+        this.InitialPayment = initialPayment;
     }
-    public float dailyPenaltyRate = 10.00f;
-    public float CalculatePenalty(float dateOfBurrow, float dateOfReturn)
+    public decimal PenaltyFee;
+    public void MarkAsReturned(DateTime returnDate, decimal penalty)
     {
-        if (dateOfBurrow < dateOfReturn) return (dateOfBurrow - dateOfReturn)*dailyPenaltyRate;
-        else return 0;
+        DateOfReturn = returnDate;
+        PenaltyFee = penalty;
     }
 }
