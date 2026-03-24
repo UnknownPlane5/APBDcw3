@@ -5,5 +5,5 @@ public abstract class User
     protected int id { get; set; }
     protected string name{ get; set; }
     protected string surname { get; set; }
-    protected int maxLoanLimit { get; set; }
+    protected int maxRentalLimit { get; }
 }
