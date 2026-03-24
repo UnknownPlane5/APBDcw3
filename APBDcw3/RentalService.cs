@@ -10,19 +10,19 @@ public class RentalService
     private float initialPayment;
     private string Punishment;
 
-    public RentalService(User whoBorrowed, Device borrowedDevice, int dateOfBurrow, int time, int dateOfReturn,
+    public RentalService(User whoBorrowed, Device borrowedDevice, int dateOfBurrow, int dateOfReturn,
      float initialPayment)
     {
         this.whoBorrowed = whoBorrowed;
         this.borrowedDevice = borrowedDevice;
         this.dateOfBurrow = dateOfBurrow;
-        this.time = time;
         this.dateOfReturn = dateOfReturn;
         this.initialPayment = initialPayment;
     }
-
-    public int CalculatePenalty()
+    public float dailyPenaltyRate = 10.00f;
+    public float CalculatePenalty(float dateOfBurrow, float dateOfReturn)
     {
-        return this.dateOfBurrow - this.dateOfReturn;
+        if (dateOfBurrow < dateOfReturn) return (dateOfBurrow - dateOfReturn)*dailyPenaltyRate;
+        else return 0;
     }
 }
