@@ -1,8 +1,9 @@
 namespace APBDcw3;
 
-public class User
+public abstract class User
 {
-    private int id;
-    private string name;
-    private string type;
+    protected int id { get; set; }
+    protected string name{ get; set; }
+    protected string surname { get; set; }
+    protected int maxLoanLimit { get; set; }
 }

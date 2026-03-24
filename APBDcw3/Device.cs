@@ -1,8 +1,9 @@
 namespace APBDcw3;
 
-public class Device
+public abstract class Device
 {
-    int id ;
-    string name;
-    string status;
+    public int id {get; set;}
+    public string name { get; set; }
+    public bool isAvailable { get; set; }
+    protected string description { get; set; }
 }

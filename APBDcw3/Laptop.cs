@@ -1,6 +1,6 @@
 namespace APBDcw3;
 
-public class Laptop
+public class Laptop:Device
 {
     
 }

@@ -1,6 +1,6 @@
 namespace APBDcw3;
 
-public class Camera
+public class Camera:Device
 {
     
 }

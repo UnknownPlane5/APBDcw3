@@ -1,6 +1,6 @@
 namespace APBDcw3;
 
-public class Projector
+public class Projector:Device
 {
     
 }
