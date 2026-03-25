@@ -10,11 +10,25 @@ public class RentalService
     {
         _users.Add(user);
     }
-
+    public void AddUsers(List<User> users)
+    {
+        foreach (var u in users)
+        {
+            _users.Add(u);
+        }
+    }
     public void AddDevice(Device device)
     {
         _devices.Add(device);
     }
+    public void AddDevices(List<Device> devices)
+    {
+        foreach (var u in devices)
+        {
+            _devices.Add(u);
+        }
+    }
+
 
     public void DisplayAllDevices(List<Device> devices)
     {
@@ -49,5 +63,13 @@ public class RentalService
         }
         rental.MarkAsReturned(dateOfReturn, penalty);
         rental.BorrowedDevice.isAvailable = true;
+    }
+
+    public void GenerateReport()
+    {
+        Console.WriteLine("Rental Report");
+        Console.WriteLine("Liczba wypożyczeń:"+_rentals.Count);
+        Console.WriteLine("Aktywne: "+_rentals.Count);
+        Console.WriteLine("--------------------------");
     }
 }
