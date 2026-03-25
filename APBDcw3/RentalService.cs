@@ -35,7 +35,7 @@ public class RentalService
         Console.WriteLine("------------------Devices----------------");
         foreach (var device in devices)
         {
-            Console.WriteLine("|"+ device.GetDescription() +"|Availability"+ device.isAvailable);
+            Console.WriteLine("|"+ device.GetSpecs() +"|Availability"+ device.isAvailable);
         }
     }
     public void DisplayAvailableDevices(List<Device> devices)
@@ -43,7 +43,7 @@ public class RentalService
         Console.WriteLine("------------------Devices----------------");
         foreach (var device in devices)
         {
-            if(device.isAvailable) Console.WriteLine("|"+ device.GetDescription());
+            if(device.isAvailable) Console.WriteLine("|"+ device.GetSpecs());
         }
     }
     public Rental RentDevice(User user, Device device, DateTime dateOfBurrow,
