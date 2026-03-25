@@ -2,13 +2,14 @@ namespace APBDcw3;
 
 public abstract class User
 {
-    protected static int Id { get; set; }
-    protected string Name{ get; set; }
-    protected string Surname { get; set; }
-    public abstract int MaxRentalLimit { get; }
+    public static int Id { get; set; }
+    public string Name{ get; set; }
+    public string Surname { get; set; }
+    public abstract int MaxRentalLimit { get; }    
+    private static int idCounter = 1;
     protected User (int id, string name, string surname)
     {
-        Id = id;
+        Id = idCounter++;
         Name = name;
         Surname = surname;
     }
